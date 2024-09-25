@@ -8,6 +8,16 @@ type Approval @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
+type TokenHolder @entity {
+  id: ID!  # 持币者地址
+  balance: BigInt!  # 持有的代币数量
+}
+
+type TokenHolderCount @entity {
+  id: ID!
+  count: Int!
+}
+
 type OwnershipTransferred @entity(immutable: true) {
   id: Bytes!
   previousOwner: Bytes! # address
